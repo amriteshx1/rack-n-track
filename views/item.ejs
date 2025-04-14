@@ -10,6 +10,7 @@
     <% if(data) { %>
         <% data.forEach(data => { %>
             <a href="/category/item/update/<%= data.id %>">Edit</a>
+            <a href="/category/item/delete/<%= data.id %>">Delete</a>
             <h2><%= data.name %></h2>
             <h4><%= data.description %></h4>
         <% }) %>

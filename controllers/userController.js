@@ -59,13 +59,19 @@ exports.getUpdateItem = async(req, res) => {
 
 exports.postUpdateItem = async (req,res) => {
     const id = req.params.id;
+    const item = await db.getItemById(id);
     await db.updateItemName(id, req.body.name);
-    res.redirect("/category");
+    res.redirect(`/category/item/${item.category_id}`);
 }
 
 exports.deleteCategory = async (req, res) => {
     const id = req.params.id;
     await db.deleteCategory(id);
     res.redirect("/category");
-  };
+};
   
+exports.deleteItem = async (req, res) => {
+    const item = await db.getItemById(req.params.id);
+    await db.deleteItem(req.params.id);
+    res.redirect(`/category/item/${item.category_id}`);
+};

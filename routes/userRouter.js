@@ -14,5 +14,6 @@ userRouter.post("/category/update/:id", userController.postUpdateCategory);
 userRouter.get("/category/item/update/:id", userController.getUpdateItem);
 userRouter.post("/category/item/update/:id", userController.postUpdateItem);
 userRouter.get("/category/delete/:id", userController.deleteCategory);
+userRouter.get("/category/item/delete/:id", userController.deleteItem);
 
 module.exports = userRouter;
