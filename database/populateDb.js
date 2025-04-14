@@ -19,16 +19,27 @@ INSERT INTO categories (name, description)
 VALUES
 ('Electronics', 'Devices like phones, laptops, etc.'),
 ('Groceries', 'Daily consumables like fruits, vegetables, etc.'),
-('Books', 'Books from various genres');
+('Books', 'Books from various genres'),
+('Clothing', 'Apparel for men, women, and kids');
 
 INSERT INTO items (name, description, category_id)
 VALUES
 ('Laptop', 'A powerful laptop', 1),
 ('Smartphone', 'A sleek smartphone', 1),
+('Headphones', 'Noise-canceling headphones', 1),
+('Smartwatch', 'A feature-packed smartwatch', 1),
 ('Apple', 'Fresh red apples', 2),
 ('Banana', 'Fresh ripe bananas', 2),
+('Carrot', 'Crunchy organic carrots', 2),
+('Tomato', 'Juicy ripe tomatoes', 2),
 ('Fiction Book', 'An exciting fiction novel', 3),
-('Cookbook', 'A cookbook with delicious recipes', 3);
+('Cookbook', 'A cookbook with delicious recipes', 3),
+('History Book', 'A detailed historical analysis', 3),
+('Science Book', 'An engaging science guide', 3),
+('T-shirt', 'A comfortable cotton T-shirt', 4),
+('Jeans', 'Durable denim jeans', 4),
+('Jacket', 'A warm winter jacket', 4),
+('Shoes', 'Stylish and durable shoes', 4);
 
 `;
 
