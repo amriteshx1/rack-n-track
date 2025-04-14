@@ -62,3 +62,10 @@ exports.postUpdateItem = async (req,res) => {
     await db.updateItemName(id, req.body.name);
     res.redirect("/category");
 }
+
+exports.deleteCategory = async (req, res) => {
+    const id = req.params.id;
+    await db.deleteCategory(id);
+    res.redirect("/category");
+  };
+  

@@ -13,6 +13,6 @@ userRouter.get("/category/update/:id", userController.getUpdateCategory);
 userRouter.post("/category/update/:id", userController.postUpdateCategory);
 userRouter.get("/category/item/update/:id", userController.getUpdateItem);
 userRouter.post("/category/item/update/:id", userController.postUpdateItem);
-
+userRouter.get("/category/delete/:id", userController.deleteCategory);
 
 module.exports = userRouter;
