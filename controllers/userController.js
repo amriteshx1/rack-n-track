@@ -38,3 +38,15 @@ exports.postNewItem = async (req,res) => {
     await db.addNewItem(name, description, category_id);
     res.redirect(`/category/item/${category_id}`);
 }
+
+exports.getUpdateCategory = async(req, res) => {
+    const id = req.params.id;
+    const category = await db.getCategoryById(id);
+    res.render('updateCategory', { title: 'Update Page', id, name: category.name });
+}
+
+exports.postUpdateCategory = async (req, res) => {
+    const id = req.params.id;
+    await db.updateCategoryName(id, req.body.name);
+    res.redirect("/category");
+}
