@@ -12,7 +12,7 @@ exports.categoryPageHandle = async (req, res) => {
 
 exports.viewItemsByCategory = async (req,res) => {
     const items = await db.getAllItems(req.params.id);
-    res.render('item', { title: 'Item Page', data: items });
+    res.render('item', { title: 'Item Page', data: items, categoryId: req.params.id });
 }
 
 exports.getNewCategory = (req,res) => {
@@ -24,4 +24,17 @@ exports.postNewCategory = async (req,res) => {
     const description = req.body.description;
     await db.addNewCategory(name, description);
     res.redirect("/category");
+}
+
+exports.getNewItem = (req,res) => {
+    const Id = req.params.id;
+    res.render("formItem", { title: "Form Page", Id: Id });
+}
+
+exports.postNewItem = async (req,res) => {
+    const category_id = req.params.id;
+    const name = req.body.name;
+    const description = req.body.description;
+    await db.addNewItem(name, description, category_id);
+    res.redirect(`/category/item/${category_id}`);
 }
