@@ -1,7 +1,7 @@
 const db = require('../database/queries');
 
 exports.homePageHandle = (req, res) => {
-    res.render('index', { title: 'Homepage' });
+    res.render('index', { title: 'Home' });
 }
 
 exports.categoryPageHandle = async (req, res) => {
@@ -16,7 +16,7 @@ exports.viewItemsByCategory = async (req,res) => {
 }
 
 exports.getNewCategory = (req,res) => {
-    res.render('formCategory', {title: 'Form Page'});
+    res.render('formCategory', {title: 'Category Page'});
 }
 
 exports.postNewCategory = async (req,res) => {
@@ -28,7 +28,7 @@ exports.postNewCategory = async (req,res) => {
 
 exports.getNewItem = (req,res) => {
     const Id = req.params.id;
-    res.render("formItem", { title: "Form Page", Id: Id });
+    res.render("formItem", { title: "Item Page", Id: Id });
 }
 
 exports.postNewItem = async (req,res) => {
@@ -42,7 +42,7 @@ exports.postNewItem = async (req,res) => {
 exports.getUpdateCategory = async(req, res) => {
     const id = req.params.id;
     const category = await db.getCategoryById(id);
-    res.render('updateCategory', { title: 'Update Page', id, name: category.name });
+    res.render('updateCategory', { title: 'Category Page', id, name: category.name });
 }
 
 exports.postUpdateCategory = async (req, res) => {
@@ -54,7 +54,7 @@ exports.postUpdateCategory = async (req, res) => {
 exports.getUpdateItem = async(req, res) => {
     const id = req.params.id;
     const item = await db.getItemById(id);
-    res.render('updateItem', {title: 'Update Page', id, name: item.name});
+    res.render('updateItem', {title: 'Item Page', id, name: item.name});
 }
 
 exports.postUpdateItem = async (req,res) => {
