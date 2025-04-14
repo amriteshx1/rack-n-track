@@ -2,6 +2,10 @@ require("dotenv").config();
 const { Client } = require("pg");
 
 const SQL = `
+
+   DROP TABLE IF EXISTS items;
+  DROP TABLE IF EXISTS categories;
+  
    CREATE TABLE categories (
     id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     name VARCHAR(255) NOT NULL,
@@ -9,7 +13,7 @@ const SQL = `
 );
 
 CREATE TABLE items (
-    id SERIAL PRIMARY KEY,
+    id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     name VARCHAR(255) NOT NULL,
     description TEXT,
     category_id INT REFERENCES categories(id) ON DELETE CASCADE
