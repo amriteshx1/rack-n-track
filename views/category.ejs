@@ -7,6 +7,12 @@
 </head>
 <body>
     <h2>Category Page Buddy</h2>
+    <% if(data) { %>
+        <% data.forEach(data => { %>
+            <a href="/category/item/<%= data.id %>"><h2><%= data.name %></h2></a>
+            <h4><%= data.description %></h4>
+        <% }) %>
+    <% } %>
     <a href="/">Back to home page</a>
 </body>
 </html>

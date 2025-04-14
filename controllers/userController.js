@@ -1,11 +1,16 @@
+const db = require('../database/queries');
+
 exports.homePageHandle = (req, res) => {
     res.render('index', { title: 'Homepage' });
 }
 
-exports.categoryPageHandle = (req, res) => {
-    res.render('category', { title: 'Category Page' });
+exports.categoryPageHandle = async (req, res) => {
+
+    const data = await db.getAllCategories();
+    res.render('category', { title: 'Category Page', data: data });
 }
 
-exports.itemPageHandle = (req, res) => {
-    res.render('item', { title: 'Item Page' });
+exports.viewItemsByCategory = async (req,res) => {
+    const items = await db.getAllItems(req.params.id);
+    res.render('item', { title: 'Item Page', data: items });
 }

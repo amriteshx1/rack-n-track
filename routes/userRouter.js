@@ -4,7 +4,7 @@ const userRouter = Router();
 
 userRouter.get("/", userController.homePageHandle);
 userRouter.get("/category", userController.categoryPageHandle);
-userRouter.get("/item", userController.itemPageHandle);
+userRouter.get("/category/item/:id", userController.viewItemsByCategory);
 
 
 module.exports = userRouter;
