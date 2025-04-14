@@ -14,3 +14,14 @@ exports.viewItemsByCategory = async (req,res) => {
     const items = await db.getAllItems(req.params.id);
     res.render('item', { title: 'Item Page', data: items });
 }
+
+exports.getNewCategory = (req,res) => {
+    res.render('formCategory', {title: 'Form Page'});
+}
+
+exports.postNewCategory = async (req,res) => {
+    const name = req.body.name;
+    const description = req.body.description;
+    await db.addNewCategory(name, description);
+    res.redirect("/category");
+}
