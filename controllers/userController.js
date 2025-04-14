@@ -50,3 +50,15 @@ exports.postUpdateCategory = async (req, res) => {
     await db.updateCategoryName(id, req.body.name);
     res.redirect("/category");
 }
+
+exports.getUpdateItem = async(req, res) => {
+    const id = req.params.id;
+    const item = await db.getItemById(id);
+    res.render('updateItem', {title: 'Update Page', id, name: item.name});
+}
+
+exports.postUpdateItem = async (req,res) => {
+    const id = req.params.id;
+    await db.updateItemName(id, req.body.name);
+    res.redirect("/category");
+}

@@ -16,6 +16,11 @@ async function getCategoryById(id) {
     return rows[0];
 }  
 
+async function getItemById(id){
+    const { rows } = await pool.query("SELECT * FROM items WHERE id = $1", [id]);
+    return rows[0];
+}
+
 //CREATE
 async function addNewCategory(name, description){
   await pool.query("INSERT INTO categories (name, description) VALUES ($1, $2)",[name, description]);
@@ -47,6 +52,7 @@ module.exports = {
   getAllCategories,
   getAllItems,
   getCategoryById,
+  getItemById,
   addNewCategory,
   addNewItem,
   updateCategoryName,

@@ -9,6 +9,7 @@
     <h1>Item page buddy</h1>
     <% if(data) { %>
         <% data.forEach(data => { %>
+            <a href="/category/item/update/<%= data.id %>">Edit</a>
             <h2><%= data.name %></h2>
             <h4><%= data.description %></h4>
         <% }) %>
