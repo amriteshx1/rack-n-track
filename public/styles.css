@@ -115,7 +115,7 @@ body,html{
     font-family: inherit;
 }
 
-/* FormCategory.ejs & FormItem.ejs & UpdateCategory.ejs */
+/* FormCategory.ejs & FormItem.ejs & UpdateCategory.ejs & UpdateItem.ejs*/
 .cnt4{
     min-height: 100vh;
     max-width: 100vw;
