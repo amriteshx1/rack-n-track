@@ -69,15 +69,17 @@ body,html{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 3vh;
 }
 .smallCnt2, .smallCnt3{
-    height: 20vh;
+    min-height: 20vh;
     width: 30vw;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
     padding: 10px;
     gap: 1vh;
     border: 2px solid wheat;
@@ -113,6 +115,16 @@ body,html{
 .smallCnt2 > a > h2, .smallCnt3 > h2{
     font-size: 2vw;
     font-family: inherit;
+}
+.smallCnt2 > a {
+    display: block;
+    width: 100%;
+}
+.smallCnt2 > h3, .smallCnt3 > h3, .smallCnt2 > a > h2, .smallCnt3 > h2{
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: center;
+    width: 100%;
 }
 
 /* FormCategory.ejs & FormItem.ejs & UpdateCategory.ejs & UpdateItem.ejs*/
