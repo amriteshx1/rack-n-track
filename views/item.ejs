@@ -3,20 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <title><%= title %></title>
 </head>
 <body>
-    <h1>Item page buddy</h1>
+    <div class="cnt3">
+    <div class="miniCnt3">
+    <h2>Items</h2>
+    <a href="/category/item/<%= categoryId %>/create">Add a new item +</a>
     <% if(data) { %>
         <% data.forEach(data => { %>
-            <a href="/category/item/update/<%= data.id %>">Edit</a>
-            <a href="/category/item/delete/<%= data.id %>" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
+            <div class="smallCnt3">
+            <div class="tinyCnt3">
+            <a href="/category/item/update/<%= data.id %>">✏️</a>
+            <a href="/category/item/delete/<%= data.id %>" onclick="return confirm('Are you sure you want to delete this item?');">🗑️</a>
+            </div>
             <h2><%= data.name %></h2>
-            <h4><%= data.description %></h4>
+            <h3><%= data.description %></h3>
+            </div> 
         <% }) %>
     <% } %>
-    <a href="/category/item/<%= categoryId %>/create">Add New Item</a>
     <a href="/category">Back to Category</a>
-    <a href="/">Back to Home page</a>
+    <a href="/">Back to Home</a>
+    </div>
+    </div>
 </body>
 </html>
